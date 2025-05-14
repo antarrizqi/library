@@ -22,41 +22,34 @@
             </div>
 
             <!-- Book Information -->
+
+            @foreach ($books as $book)
+                
             <div class="md:w-2/3 p-6">
-                <h1 class="text-3xl font-bold text-gray-900 mb-2">To Kill a Mockingbird</h1>
-                <p class="text-gray-500 mb-4">By Harper Lee</p>
+                <h1 class="text-3xl font-bold text-gray-900 mb-2">{{ $book->name }}</h1>
+                <p class="text-gray-500 mb-4">{{ $book->publisher }}</p>
 
                 <div class="grid grid-cols-1 md:grid-cols-2 gap-4 mb-6">
                     <div>
                         <h3 class="text-sm font-medium text-gray-500">Publisher</h3>
-                        <p class="text-gray-900">J.B. Lippincott & Co.</p>
+                        <p class="text-gray-900">{{ $book->publisher }}</p>
                     </div>
                     <div>
                         <h3 class="text-sm font-medium text-gray-500">Year Published</h3>
-                        <p class="text-gray-900">1960</p>
+                        <p class="text-gray-900">{{ $book->publication_year }}</p>
                     </div>
-                    <div>
-                        <h3 class="text-sm font-medium text-gray-500">ISBN</h3>
-                        <p class="text-gray-900">978-0-06-112008-4</p>
-                    </div>
+                    
                     <div>
                         <h3 class="text-sm font-medium text-gray-500">Page Count</h3>
-                        <p class="text-gray-900">281</p>
+                        <p class="text-gray-900">{{ $book->page_count }}</p>
                     </div>
-                    <div>
-                        <h3 class="text-sm font-medium text-gray-500">Language</h3>
-                        <p class="text-gray-900">English</p>
-                    </div>
-                    <div>
-                        <h3 class="text-sm font-medium text-gray-500">Genre</h3>
-                        <p class="text-gray-900">Southern Gothic, Bildungsroman</p>
-                    </div>
+                  
                 </div>
 
                 <div class="mb-6">
                     <h3 class="text-sm font-medium text-gray-500 mb-2">Description</h3>
                     <p class="text-gray-900">
-                        To Kill a Mockingbird is a novel by Harper Lee published in 1960. It was immediately successful, winning the Pulitzer Prize, and has become a classic of modern American literature. The plot and characters are loosely based on Lee's observations of her family, her neighbors and an event that occurred near her hometown of Monroeville, Alabama, in 1936, when she was 10 years old.
+                       {{ $book->description }}
                     </p>
                 </div>
 
@@ -67,6 +60,8 @@
                 </div>
             </div>
         </div>
+                    @endforeach
+
 
         <!-- Additional Information -->
         <div class="border-t border-gray-200 px-6 py-4">

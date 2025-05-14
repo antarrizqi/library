@@ -7,23 +7,23 @@
     <nav>
         <ul>
             <li class="mb-4">
-                <a href="dashboard.html" class="flex items-center py-2 px-4 hover:bg-indigo-700 rounded-lg">
+                <a href="{{ route('books.index') }}" class="flex items-center py-2 px-4 hover:bg-indigo-700 rounded-lg">
                     <i class="fas fa-tachometer-alt mr-3"></i>
                     <span>Dashboard</span>
                 </a>
             </li>
             <li class="mb-4">
-                <a href="create.html" class="flex items-center py-2 px-4 hover:bg-indigo-700 rounded-lg">
+                <a href="{{ route('books.create') }}" class="flex items-center py-2 px-4 hover:bg-indigo-700 rounded-lg">
                     <i class="fas fa-plus-circle mr-3"></i>
                     <span>Add Book</span>
                 </a>
             </li>
-            <li class="mb-4">
-                <a href="#" class="flex items-center py-2 px-4 bg-indigo-900 rounded-lg">
+            {{-- <li class="mb-4">
+                <a href="{{route('books.show')  }}" class="flex items-center py-2 px-4 bg-indigo-900 rounded-lg">
                     <i class="fas fa-edit mr-3"></i>
-                    <span>Update Book</span>
+                    <span>show Book</span>
                 </a>
-            </li>
+            </li> --}}
             <li class="mb-4">
                 <a href="#" class="flex items-center py-2 px-4 hover:bg-indigo-700 rounded-lg">
                     <i class="fas fa-users mr-3"></i>

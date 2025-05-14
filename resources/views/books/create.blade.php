@@ -2,14 +2,15 @@
 @section('content')
     <div class="flex justify-between items-center mb-8">
         <h2 class="text-2xl font-bold text-gray-800">Add New Book</h2>
-        <a href="dashboard.html" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600">
+        <a href="{{ route('books.index') }}" class="bg-gray-500 text-white px-4 py-2 rounded-lg hover:bg-gray-600">
             <i class="fas fa-arrow-left mr-2"></i>Back to Dashboard
         </a>
     </div>
 
     <!-- Add Book Form -->
     <div class="bg-white rounded-lg shadow p-6">
-        <form action="dashboard.html" method="GET">
+        <form action="{{ route('store.books') }}" method="POST">
+            @csrf
             <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
                 <!-- Book Name -->
                 <div class="col-span-2 md:col-span-1">
@@ -41,7 +42,7 @@
                     <input type="number" id="pages" name="pages" min="1" required class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500">
                 </div>
 
-                <!-- Cover Image -->
+                {{-- <!-- Cover Image -->
                 <div class="col-span-2">
                     <label for="cover" class="block text-sm font-medium text-gray-700 mb-1">Cover Image (Optional)</label>
                     <div class="flex items-center">
@@ -51,7 +52,7 @@
                             <input type="file" id="cover" name="cover" accept="image/*" class="hidden">
                         </label>
                     </div>
-                </div>
+                </div> --}}
             </div>
 
             <!-- Submit Button -->
